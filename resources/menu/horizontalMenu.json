@@ -1,0 +1,175 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Overview",
+      "icon": "menu-icon tf-icons ti ti-graph",
+      "slug": "pages-home"
+    },
+    {
+      "url": "",
+      "name": "Procurement",
+      "icon": "menu-icon tf-icons ti ti-briefcase",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "/pages-public-bidding",
+          "icon": "",
+          "name": "Public Bidding",
+          "slug": "pages-public-bidding",
+          "target": ""
+        },
+        {
+          "url": "/pages-small-value-procurement",
+          "icon": "",
+          "name": "Small Value Procurement",
+          "slug": "pages-small-value-procurement"
+        },
+        {
+          "url": "/pages-inventory-for-sale-lease",
+          "icon": "",
+          "name": "Inventory for Sale/Lease",
+          "slug": "pages-inventory-for-sale-lease"
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "name": "Purchase",
+      "icon": "menu-icon tf-icons ti ti-receipt",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "/pages-create-purchase-order",
+          "icon": "",
+          "name": "Create Purchase Order",
+          "slug": "pages-create-purchase-order"
+        },
+        {
+          "url": "/pages-purchase-order-list",
+          "icon": "",
+          "name": "Purchase Order List",
+          "slug": "pages-purchase-order-list"
+        },
+        {
+          "url": "/",
+          "icon": "",
+          "name": "Invoice Management",
+          "slug": "pages-invetory",
+          "submenu": [
+            {
+              "url": "/",
+              "icon": "",
+              "name": "Invoice List",
+              "slug": "pages-invetory"
+            },
+            {
+              "url": "/",
+              "icon": "",
+              "name": "Invoice Approval Workflow",
+              "slug": "pages-invetory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "",
+      "name": "Inventory Management",
+      "icon": "menu-icon tf-icons ti ti-package",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "/pages-all-inventory",
+          "icon": "",
+          "name": "All Inventory",
+          "slug": "pages-all-inventory",
+          "target": ""
+        },
+        {
+          "url": "/pages-mro-inventory",
+          "icon": "",
+          "name": "MRO Inventory",
+          "slug": "pages-mro-inventory"
+        },
+        {
+          "url": "/pages-request-history",
+          "icon": "",
+          "name": "Request History",
+          "slug": "pages-request-history"
+        },
+        {
+          "url": "/pages-approval-workflow",
+          "icon": "",
+          "name": "Approval Workflow",
+          "slug": "pages-approval-workflow"
+        },
+        {
+          "url": "/pages-pending-approval",
+          "icon": "",
+          "name": "Pending Approval",
+          "slug": "pages-pending-approval"
+        },
+        {
+          "url": "/pages-returned-inventory",
+          "icon": "",
+          "name": "Returned Inventory",
+          "slug": "pages-returned-inventory"
+        },
+        {
+          "url": "/pages-locations",
+          "icon": "",
+          "name": "Locations",
+          "slug": "/pages-locations"
+        },
+        {
+          "url": "/",
+          "icon": "",
+          "name": "Items Management",
+          "slug": "",
+          "submenu": [
+            {
+              "url": "/pages-items-management-add",
+              "icon": "",
+              "name": "Add new Items",
+              "slug": "pages-items-management-add"
+            },
+            {
+              "url": "/pages-items-management-list",
+              "icon": "",
+              "name": "Items List",
+              "slug": "pages-items-management-list"
+            }
+          ]
+        },
+        {
+          "url": "/pages-reorder",
+          "icon": "",
+          "name": "Reorder List",
+          "slug": "pages-reorder"
+        }
+      ]
+    },
+    {
+      "url": "pages/misc-error",
+      "name": "Error",
+      "icon": "menu-icon tf-icons ti ti-alert-triangle",
+      "slug": "pages-misc-error",
+      "target": "_blank"
+    },
+    {
+      "url": "auth/login-basic",
+      "name": "Login",
+      "icon": "menu-icon tf-icons ti ti-login",
+      "slug": "auth-login-basic",
+      "target": "_blank"
+    },
+    {
+      "url": "auth/register-basic",
+      "name": "Register",
+      "icon": "menu-icon tf-icons ti ti-user",
+      "slug": "auth-register-basic",
+      "target": "_blank"
+    }
+  ]
+}
