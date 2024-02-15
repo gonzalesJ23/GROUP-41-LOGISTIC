@@ -22,7 +22,7 @@ use App\Http\Controllers\pages\Reorder;
 use App\Http\Controllers\pages\MiscError;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
-
+use App\Http\Controllers\PpmPublicBiddingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +44,7 @@ Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 // pages
 Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
 // Procurement
+Route::resource('ppm-public-biddings', PpmPublicBiddingController::class);
 Route::get('/pages-public-bidding', [PublicBidding::class, 'index'])->name('pages-public-bidding');
 Route::get('/pages-small-value-procurement', [SmallValueProcurement::class, 'index'])->name(
   'pages-small-value-procurement'
