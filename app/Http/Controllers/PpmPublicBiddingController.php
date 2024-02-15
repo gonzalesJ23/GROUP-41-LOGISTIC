@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\PpmPublicBiddingController;
+namespace App\Http\Controllers;
 
 use App\Models\PpmPublicBidding;
 use Illuminate\Http\Request;
@@ -12,8 +12,8 @@ class PpmPublicBiddingController extends Controller
    */
   public function index()
   {
-    $publicBiddings = PpmPublicBiddingController::all();
-    return view('ppm-public-bidding.index', compact('ppmpublicBiddings'));
+    $publicBiddings = PpmPublicBidding::all();
+    return view('ppm-public-biddings\index', compact('publicBidding'));
   }
 
   /**
@@ -21,7 +21,7 @@ class PpmPublicBiddingController extends Controller
    */
   public function create()
   {
-    return view('ppm-public-bidding.create');
+    return view('ppm-public-biddings\create');
   }
 
   /**
@@ -39,7 +39,7 @@ class PpmPublicBiddingController extends Controller
     PpmPublicBidding::create($validatedData);
 
     return redirect()
-      ->route('public-biddings.index')
+      ->route('ppm-public-biddings\index')
       ->with('success', 'Public bidding created successfully.');
   }
 
@@ -48,7 +48,7 @@ class PpmPublicBiddingController extends Controller
    */
   public function show(PpmPublicBidding $publicBidding)
   {
-    return view('pages-public-bidding.show', compact('publicBidding'));
+    return view('ppm-public-biddings\show', compact('publicBidding'));
   }
 
   /**
@@ -56,7 +56,7 @@ class PpmPublicBiddingController extends Controller
    */
   public function edit(PpmPublicBidding $publicBidding)
   {
-    return view('pages-public-bidding.edit', compact('publicBidding'));
+    return view('ppm-public-biddings\edit', compact('publicBidding'));
   }
 
   /**
@@ -74,7 +74,7 @@ class PpmPublicBiddingController extends Controller
     $publicBidding->update($validatedData);
 
     return redirect()
-      ->route('public-biddings.index')
+      ->route('ppm-public-biddings\index')
       ->with('success', 'Public bidding updated successfully.');
   }
 
@@ -86,7 +86,7 @@ class PpmPublicBiddingController extends Controller
     $publicBidding->delete();
 
     return redirect()
-      ->route('public-biddings.index')
+      ->route('ppm-public-biddings\index')
       ->with('success', 'Public bidding deleted successfully.');
   }
 }

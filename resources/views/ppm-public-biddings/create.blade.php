@@ -1,5 +1,8 @@
 @extends('layouts/layoutMaster')
 
+@section('title', 'Create New Public Bidding')
+
+
 @section('content')
     <h1>Create New Public Bidding</h1>
 
