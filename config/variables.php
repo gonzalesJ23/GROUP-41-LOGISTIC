@@ -3,7 +3,7 @@
 return [
   'creatorName' => 'Bbox Corp',
   'creatorUrl' => '',
-  'templateName' => 'Bbox',
+  'templateName' => 'BBOX EXPRESS',
   'templateSuffix' => 'Corp',
   'templateVersion' => '1.0.0',
   'templateFree' => false,
