@@ -1,6 +1,5 @@
 @extends('layouts/layoutMaster')
 
-
 @section('content')
     <h1>Public Bidding Details</h1>
 
@@ -29,4 +28,5 @@
         </tbody>
     </table>
 
-    <a href="{{ route('ppm-public-biddings
+    <a href="{{ route('ppm-public-biddings.index') }}" class="btn btn-primary">Back to List</a>
+@endsection

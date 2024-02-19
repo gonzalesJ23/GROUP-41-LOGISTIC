@@ -43,8 +43,20 @@ Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 
 // pages
 Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
-// Procurement
+// Procurement Public Bidding
 Route::resource('ppm-public-biddings', PpmPublicBiddingController::class);
+Route::get('ppm-public-biddings', [PpmPublicBiddingController::class, 'index'])->name('ppm-public-biddings.index');
+Route::post('ppm-public-biddings', [PpmPublicBiddingController::class, 'store'])->name('ppm-public-biddings.store');
+Route::get('public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'show'])->name(
+  'public-biddings.show'
+);
+Route::get('public-biddings/{publicBidding}/edit', [PpmPublicBiddingController::class, 'edit'])->name(
+  'public-biddings.edit'
+);
+Route::delete('public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'destroy'])->name(
+  'public-biddings.destroy'
+);
+// Procurement Public Bidding
 Route::get('/pages-public-bidding', [PublicBidding::class, 'index'])->name('pages-public-bidding');
 Route::get('/pages-small-value-procurement', [SmallValueProcurement::class, 'index'])->name(
   'pages-small-value-procurement'
