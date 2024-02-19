@@ -13,7 +13,7 @@ class PpmPublicBiddingController extends Controller
   public function index()
   {
     $publicBiddings = PpmPublicBidding::all();
-    return view('ppm-public-biddings.index', compact('publicBiddings'));
+    return view('app.ppm-public-biddings.index', compact('publicBiddings'));
   }
 
   /**
@@ -21,7 +21,7 @@ class PpmPublicBiddingController extends Controller
    */
   public function create()
   {
-    return view('ppm-public-biddings.create');
+    return view('app.ppm-public-biddings.create');
   }
 
   /**
@@ -48,22 +48,24 @@ class PpmPublicBiddingController extends Controller
    */
   public function show(PpmPublicBidding $publicBidding)
   {
-    return view('ppm-public-biddings.show', compact('publicBidding'));
+    return view('app.ppm-public-biddings.show', compact('publicBidding'));
   }
 
   /**
    * Show the form for editing the specified resource.
    */
-  public function edit(PpmPublicBidding $publicBidding)
+  public function edit($publicBiddingId)
   {
-    return view('ppm-public-biddings.edit', compact('publicBidding'));
+    $publicBidding = PpmPublicBidding::findOrFail($publicBiddingId);
+    return view('app.ppm-public-biddings.edit', compact('publicBidding'));
   }
-
   /**
    * Update the specified resource in storage.
    */
-  public function update(Request $request, PpmPublicBidding $publicBidding)
+  public function update(Request $request, $publicBiddingId)
   {
+    $publicBidding = PpmPublicBidding::findOrFail($publicBiddingId);
+
     $validatedData = $request->validate([
       'bid_document' => 'required',
       'bid_start' => 'required|date',
@@ -77,7 +79,6 @@ class PpmPublicBiddingController extends Controller
       ->route('ppm-public-biddings.index')
       ->with('success', 'Public bidding updated successfully.');
   }
-
   /**
    * Remove the specified resource from storage.
    */

@@ -13,11 +13,10 @@
       "slug": "",
       "submenu": [
         {
-          "url": "/pages-public-bidding",
+          "url": "/ppm-public-biddings",
           "icon": "",
           "name": "Public Bidding",
-          "slug": "pages-public-bidding",
-          "target": ""
+          "slug": "ppm-public-biddings"
         },
         {
           "url": "/pages-small-value-procurement",

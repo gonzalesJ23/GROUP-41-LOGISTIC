@@ -50,13 +50,16 @@ Route::post('ppm-public-biddings', [PpmPublicBiddingController::class, 'store'])
 Route::get('public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'show'])->name(
   'public-biddings.show'
 );
-Route::get('public-biddings/{publicBidding}/edit', [PpmPublicBiddingController::class, 'edit'])->name(
-  'public-biddings.edit'
+Route::get('ppm-public-biddings/{publicBidding}/edit', [PpmPublicBiddingController::class, 'edit'])->name(
+  'ppm-public-biddings.edit'
 );
 Route::delete('public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'destroy'])->name(
   'public-biddings.destroy'
 );
-// Procurement Public Bidding
+Route::put('ppm-public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'update'])->name(
+  'ppm-public-biddings.update'
+);
+// Procurement
 Route::get('/pages-public-bidding', [PublicBidding::class, 'index'])->name('pages-public-bidding');
 Route::get('/pages-small-value-procurement', [SmallValueProcurement::class, 'index'])->name(
   'pages-small-value-procurement'
