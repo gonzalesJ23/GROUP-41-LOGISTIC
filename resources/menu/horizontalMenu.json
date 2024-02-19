@@ -19,10 +19,10 @@
           "slug": "ppm-public-biddings"
         },
         {
-          "url": "/pages-small-value-procurement",
+          "url": "/ppm-small-value-procurement",
           "icon": "",
           "name": "Small Value Procurement",
-          "slug": "pages-small-value-procurement"
+          "slug": "ppm-small-value-procurement"
         },
         {
           "url": "/pages-inventory-for-sale-lease",

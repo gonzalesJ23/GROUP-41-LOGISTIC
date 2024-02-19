@@ -23,6 +23,7 @@ use App\Http\Controllers\pages\MiscError;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 use App\Http\Controllers\PpmPublicBiddingController;
+use App\Http\Controllers\PpmSmallValueProcurementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,28 +45,44 @@ Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 // pages
 Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
 // Procurement Public Bidding
-Route::resource('ppm-public-biddings', PpmPublicBiddingController::class);
-Route::get('ppm-public-biddings', [PpmPublicBiddingController::class, 'index'])->name('ppm-public-biddings.index');
-Route::post('ppm-public-biddings', [PpmPublicBiddingController::class, 'store'])->name('ppm-public-biddings.store');
-Route::get('public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'show'])->name(
-  'public-biddings.show'
+Route::get('/ppm-public-biddings', [PpmPublicBiddingController::class, 'index'])->name('ppm-public-biddings.index');
+Route::get('/ppm-public-biddings/create', [PpmPublicBiddingController::class, 'create'])->name(
+  'ppm-public-biddings.create'
 );
-Route::get('ppm-public-biddings/{publicBidding}/edit', [PpmPublicBiddingController::class, 'edit'])->name(
+Route::post('/ppm-public-biddings', [PpmPublicBiddingController::class, 'store'])->name('ppm-public-biddings.store');
+Route::get('/ppm-public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'show'])->name(
+  'ppm-public-biddings.show'
+);
+Route::get('/ppm-public-biddings/{publicBidding}/edit', [PpmPublicBiddingController::class, 'edit'])->name(
   'ppm-public-biddings.edit'
 );
-Route::delete('public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'destroy'])->name(
-  'public-biddings.destroy'
-);
-Route::put('ppm-public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'update'])->name(
+Route::put('/ppm-public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'update'])->name(
   'ppm-public-biddings.update'
 );
-// Procurement
-Route::get('/pages-public-bidding', [PublicBidding::class, 'index'])->name('pages-public-bidding');
-Route::get('/pages-small-value-procurement', [SmallValueProcurement::class, 'index'])->name(
-  'pages-small-value-procurement'
+Route::delete('/ppm-public-biddings/{publicBidding}', [PpmPublicBiddingController::class, 'destroy'])->name(
+  'ppm-public-biddings.destroy'
 );
-Route::get('/pages-inventory-for-sale-lease', [InventoryforSaleLease::class, 'index'])->name(
-  'pages-inventory-for-sale-lease'
+// Procurement Small Value Procurement
+Route::get('ppm-small-value-procurement', [PpmSmallValueProcurementController::class, 'index'])->name(
+  'ppm-small-value-procurements.index'
+);
+Route::get('/ppm-small-value-procurements/create', [PpmSmallValueProcurementController::class, 'create'])->name(
+  'ppm-small-value-procurements.create'
+);
+Route::post('/ppm-small-value-procurements', [PpmSmallValueProcurementController::class, 'store'])->name(
+  'ppm-small-value-procurements.store'
+);
+Route::get('/ppm-small-value-procurements/{id}', [PpmSmallValueProcurementController::class, 'show'])->name(
+  'ppm-small-value-procurements.show'
+);
+Route::get('/ppm-small-value-procurements/{id}/edit', [PpmSmallValueProcurementController::class, 'edit'])->name(
+  'ppm-small-value-procurements.edit'
+);
+Route::put('/ppm-small-value-procurements/{id}', [PpmSmallValueProcurementController::class, 'update'])->name(
+  'ppm-small-value-procurements.update'
+);
+Route::delete('/ppm-small-value-procurements/{id}', [PpmSmallValueProcurementController::class, 'destroy'])->name(
+  'ppm-small-value-procurements.destroy'
 );
 // Purchase
 Route::get('/pages-create-purchase-order', [CreatePurchaseOrder::class, 'index'])->name('pages-create-purchase-order');
